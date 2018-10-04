@@ -20,3 +20,4 @@ $router->get('/', function () use ($router) {
 // });
 
 $router->get('/diarios/{matricula}', 'DiarioController@list');
+$router->get('/matriculados/{diario}', 'MatriculadosController@list');
