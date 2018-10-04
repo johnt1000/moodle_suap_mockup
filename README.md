@@ -14,5 +14,19 @@ API para teste de sincronia com SUAP IFRN.
 ## Uso
 Na pasta raiz do projeto:
 ```shell
+php -S [IP]:[PORTA] -t public
+```
+
+Exemplo:
+```shell
 php -S 0.0.0.0:7777 -t public
 ```
+
+## URLs
+Listagem de diários:
+```php
+http://localhost:7777/diarios/{codigo}
+```
+Códigos existentes:
+* 110110
+* 001001
