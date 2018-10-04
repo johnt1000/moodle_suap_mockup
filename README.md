@@ -1,9 +1,14 @@
-# suap_mock
+# SUAP Mock
 API para teste de sincronia com SUAP IFRN.
 
-# Uso
-php artisan migrate
+## Requisitos
+* PHP >= 7.1.3
+* OpenSSL PHP Extension
+* PDO PHP Extension
+* Mbstring PHP Extension
 
-php artisan db:seed
-
+## Uso
+Na pasta raiz do projeto.
+```shell
 php -S 0.0.0.0:7777 -t public
+```
