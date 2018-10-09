@@ -17,7 +17,6 @@ class CreateTurmasTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('diario_id');
             $table->string('codigo');
-            $table->string('nome');
 
             $table->foreign('diario_id')->references('id')->on('diarios');
         });

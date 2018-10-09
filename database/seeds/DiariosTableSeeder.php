@@ -12,10 +12,28 @@ class DiariosTableSeeder extends Seeder
     public function run()
     {
         DB::table('diarios')->insert([
-            'codigo' => '110110',
+            'codigo' => '1',
         ]);
         DB::table('diarios')->insert([
-            'codigo' => '001001',
+            'codigo' => '2',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '3',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '4',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '5',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '6',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '7',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '8',
         ]);
     }
 }

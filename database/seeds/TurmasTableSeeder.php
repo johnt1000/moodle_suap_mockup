@@ -12,27 +12,36 @@ class TurmasTableSeeder extends Seeder
     public function run()
     {
         DB::table('turmas')->insert([
-            'codigo' => '0001',
-            'nome' => 'turma 1',
+            'codigo' => '20182.1.151047.7E',
             'diario_id' => 1,
         ]);
-
         DB::table('turmas')->insert([
-            'codigo' => '0002',
-            'nome' => 'turma 2',
+            'codigo' => '20182.1.151047.7E',
             'diario_id' => 2,
         ]);
-
         DB::table('turmas')->insert([
-            'codigo' => '0003',
-            'nome' => 'turma 3',
+            'codigo' => '20182.1.151047.7E',
             'diario_id' => 3,
         ]);
-
         DB::table('turmas')->insert([
-            'codigo' => '0004',
-            'nome' => 'turma 4',
+            'codigo' => '20182.1.151047.7E',
             'diario_id' => 4,
+        ]);
+        DB::table('turmas')->insert([
+            'codigo' => '20182.3.15122.1E.',
+            'diario_id' => 5,
+        ]);
+        DB::table('turmas')->insert([
+            'codigo' => '000120182.1.151047.7E',
+            'diario_id' => 6,
+        ]);
+        DB::table('turmas')->insert([
+            'codigo' => '000120182.1.151047.7E',
+            'diario_id' => 7,
+        ]);
+        DB::table('turmas')->insert([
+            'codigo' => '000120182.1.151047.7E',
+            'diario_id' => 8,
         ]);
     }
 }
