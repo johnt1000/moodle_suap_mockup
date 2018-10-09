@@ -16,8 +16,8 @@ class CreateComponenteCurricularTable extends Migration
         Schema::create('componentes_curriculares', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('diario_id');
-            $table->string('codigo');
-            $table->string('nome');
+            $table->string('sigla');
+            $table->string('descricao');
 
             $table->foreign('diario_id')->references('id')->on('diarios');
         });
