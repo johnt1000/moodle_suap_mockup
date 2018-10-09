@@ -15,25 +15,25 @@ class DiariosTableSeeder extends Seeder
             'codigo' => '1',
         ]);
         DB::table('diarios')->insert([
+            'codigo' => '1',
+        ]);
+        DB::table('diarios')->insert([
+            'codigo' => '1',
+        ]);
+        DB::table('diarios')->insert([
             'codigo' => '2',
         ]);
         DB::table('diarios')->insert([
-            'codigo' => '3',
+            'codigo' => '2',
         ]);
         DB::table('diarios')->insert([
-            'codigo' => '4',
+            'codigo' => '2',
         ]);
         DB::table('diarios')->insert([
-            'codigo' => '5',
+            'codigo' => '2',
         ]);
         DB::table('diarios')->insert([
-            'codigo' => '6',
-        ]);
-        DB::table('diarios')->insert([
-            'codigo' => '7',
-        ]);
-        DB::table('diarios')->insert([
-            'codigo' => '8',
+            'codigo' => '2',
         ]);
     }
 }
