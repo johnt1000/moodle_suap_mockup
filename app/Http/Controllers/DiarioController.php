@@ -17,20 +17,28 @@ class DiarioController extends Controller
     }
 
     public function list($matricula) {
-        $results = app('db')->select("SELECT * FROM diarios t WHERE t.matricula = '{$matricula}'");
+        $results = app('db')->select("SELECT * FROM diarios t WHERE t.codigo = '{$matricula}'");
         foreach ($results as $key => $value) {
+
+            $rs = app('db')->select("SELECT * FROM turmas t WHERE t.id = {$value->id}");
+            if (!empty($rs)) {
+                $value->turma = $rs[0];
+                
+                $rss = app('db')->select("SELECT * FROM cursos t WHERE t.id = {$rs[0]->id}");
+                if (!empty($rss)) {
+                    $value->turma->curso = $rss[0];
+                } else {
+                    $value->turma->curso = '';
+                }
+            } else {
+                $value->turma = '';
+            }
+
             $rs = app('db')->select("SELECT * FROM componentes_curriculares t WHERE t.id = {$value->id}");
             if (!empty($rs)) {
                 $value->componente_curricular = $rs[0];
             } else {
                 $value->componente_curricular = null;
-            }
-            
-            $rs = app('db')->select("SELECT * FROM cursos t WHERE t.id = {$value->id}");
-            if (!empty($rs)) {
-                $value->curso = $rs[0];
-            } else {
-                $value->curso = '';
             }
 
             $rs = app('db')->select("SELECT * FROM campi t WHERE t.id = {$value->id}");
@@ -39,20 +47,7 @@ class DiarioController extends Controller
             } else {
                 $value->campus = '';
             }
-            
-            $rs = app('db')->select("SELECT * FROM ofertas t WHERE t.id = {$value->id}");
-            if (!empty($rs)) {
-                $value->oferta = $rs[0];
-            } else {
-                $value->oferta = '';
-            }
 
-            $rs = app('db')->select("SELECT * FROM turmas t WHERE t.id = {$value->id}");
-            if (!empty($rs)) {
-                $value->turma = $rs[0];
-            } else {
-                $value->turma = '';
-            }
         }
         return response()->json($results);
     }
