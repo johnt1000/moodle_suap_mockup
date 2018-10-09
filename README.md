@@ -12,7 +12,20 @@ API para teste de sincronia com SUAP IFRN.
 * Vagrant - [laravel/homestead](https://laravel.com/docs/5.7/homestead)
 
 ## Uso
-Na pasta raiz do projeto:
+Acesse a raiz do projeto:
+
+```shell
+cd path_do_projeto
+```
+
+Instala dependências:
+
+```shell
+composer install
+```
+
+Roda servidor:
+
 ```shell
 php -S [IP]:[PORTA] -t public
 ```
