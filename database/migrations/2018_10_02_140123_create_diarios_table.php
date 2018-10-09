@@ -16,7 +16,6 @@ class CreateDiariosTable extends Migration
         Schema::create('diarios', function (Blueprint $table) {
             $table->increments('id');
             $table->string('codigo');
-            $table->string('matricula');
         });
     }
 
