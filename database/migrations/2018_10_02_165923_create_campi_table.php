@@ -16,7 +16,6 @@ class CreateCampiTable extends Migration
         Schema::create('campi', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('diario_id');
-            $table->string('codigo');
             $table->string('nome');
             $table->string('sigla');
 
