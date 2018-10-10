@@ -41,8 +41,8 @@ php -S 0.0.0.0:7777 -t public
 http://localhost:7777/diarios/{codigo}
 ```
 #### Códigos existentes:
-* 110110
-* 001001
+* 1
+* 2
 
 ### Listagem de matriculados do diário:
 ```php
