@@ -23,7 +23,7 @@ class MatriculadosController extends Controller
         $results = app('db')->select("SELECT * FROM diarios t WHERE t.codigo = '{$diario}'");
         foreach ($results as $key => $value) {
 
-            $rs = app('db')->select("SELECT * FROM turmas t WHERE t.id = {$value->id}");
+            $rs = app('db')->select("SELECT * FROM turmas t WHERE t.diario_id = {$value->id}");
             if (!empty($rs)) {
                 $value->turma = $rs[0];
                 
@@ -37,28 +37,37 @@ class MatriculadosController extends Controller
                 $value->turma = '';
             }
 
-            $rs = app('db')->select("SELECT * FROM componentes_curriculares t WHERE t.id = {$value->id}");
+            $rs = app('db')->select("SELECT * FROM componentes_curriculares t WHERE t.diario_id = {$value->id}");
             if (!empty($rs)) {
                 $value->componente_curricular = $rs[0];
             } else {
                 $value->componente_curricular = null;
             }
 
-            $rs = app('db')->select("SELECT * FROM campi t WHERE t.id = {$value->id}");
+            $rs = app('db')->select("SELECT * FROM campi t WHERE t.diario_id = {$value->id}");
             if (!empty($rs)) {
                 $value->campus = $rs[0];
             } else {
                 $value->campus = '';
             }
 
-            $rs = app('db')->select("SELECT * FROM professores t WHERE t.id = {$value->id}");
+            $rs = app('db')->select("SELECT * FROM professores t WHERE t.diario_id = {$value->id}");
             if (!empty($rs)) {
                 $value->professor = $rs;
             } else {
-                $value->professor = '';
+                $value->professor = [];
+            }
+
+            $rs = app('db')->select("SELECT * FROM alunos t WHERE t.diario_id = {$value->id}");
+            if (!empty($rs)) {       
+                foreach ($rs as $i => $v) {
+                    $v->polo = (object) array('id' => 1, 'nome' => 'Polo EAD');
+                }
+                $value->alunos = $rs;
+            } else {
+                $value->alunos = [];
             }
         }
-        print_r($results);
         return response()->json($results);
     }
 }

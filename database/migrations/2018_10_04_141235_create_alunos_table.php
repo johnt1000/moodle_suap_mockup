@@ -16,8 +16,12 @@ class CreateAlunosTable extends Migration
         Schema::create('alunos', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('diario_id');
-            $table->string('codigo');
             $table->string('nome');
+            $table->string('username');
+            $table->string('tipo');
+            $table->string('email_academico');
+            $table->string('email_secundario');
+            $table->boolean('status');
 
             $table->foreign('diario_id')->references('id')->on('diarios');
         });
