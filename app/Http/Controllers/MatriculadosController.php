@@ -20,7 +20,7 @@ class MatriculadosController extends Controller
         // $rs = (object) ['professores' => null, 'alunos' => null];
         // $rs->alunos = app('db')->select("SELECT * FROM alunos t WHERE t.diario_id = '{$diario}'");
         // $rs->professores = app('db')->select("SELECT * FROM professores t WHERE t.diario_id = '{$diario}'");
-        $results = app('db')->select("SELECT * FROM diarios t WHERE t.codigo = '{$matricula}'");
+        $results = app('db')->select("SELECT * FROM diarios t WHERE t.codigo = '{$diario}'");
         foreach ($results as $key => $value) {
 
             $rs = app('db')->select("SELECT * FROM turmas t WHERE t.id = {$value->id}");
@@ -51,7 +51,14 @@ class MatriculadosController extends Controller
                 $value->campus = '';
             }
 
+            $rs = app('db')->select("SELECT * FROM professores t WHERE t.id = {$value->id}");
+            if (!empty($rs)) {
+                $value->professor = $rs;
+            } else {
+                $value->professor = '';
+            }
         }
+        print_r($results);
         return response()->json($results);
     }
 }

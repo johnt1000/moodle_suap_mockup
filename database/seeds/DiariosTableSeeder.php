@@ -21,7 +21,7 @@ class DiariosTableSeeder extends Seeder
             'codigo' => '1',
         ]);
         DB::table('diarios')->insert([
-            'codigo' => '2',
+            'codigo' => '1',
         ]);
         DB::table('diarios')->insert([
             'codigo' => '2',
