@@ -48,6 +48,7 @@ class DiarioController extends Controller
                 $value->campus = '';
             }
         }
+        print_r($results);
         return response()->json($results);
     }
 }

@@ -17,9 +17,6 @@ class MatriculadosController extends Controller
     }
 
     public function list($diario) {
-        // $rs = (object) ['professores' => null, 'alunos' => null];
-        // $rs->alunos = app('db')->select("SELECT * FROM alunos t WHERE t.diario_id = '{$diario}'");
-        // $rs->professores = app('db')->select("SELECT * FROM professores t WHERE t.diario_id = '{$diario}'");
         $results = app('db')->select("SELECT * FROM diarios t WHERE t.codigo = '{$diario}'");
         foreach ($results as $key => $value) {
 
