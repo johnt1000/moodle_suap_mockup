@@ -17,7 +17,7 @@ class MatriculadosController extends Controller
     }
 
     public function list($diario) {
-        $results = app('db')->select("SELECT * FROM diarios t WHERE t.codigo = '{$diario}'");
+        $results = app('db')->select("SELECT * FROM diarios t WHERE t.id = '{$diario}'");
         foreach ($results as $key => $value) {
 
             $rs = app('db')->select("SELECT * FROM turmas t WHERE t.diario_id = {$value->id}");
@@ -50,9 +50,9 @@ class MatriculadosController extends Controller
 
             $rs = app('db')->select("SELECT * FROM professores t WHERE t.diario_id = {$value->id}");
             if (!empty($rs)) {
-                $value->professor = $rs;
+                $value->professores = $rs;
             } else {
-                $value->professor = [];
+                $value->professores = [];
             }
 
             $rs = app('db')->select("SELECT * FROM alunos t WHERE t.diario_id = {$value->id}");
@@ -65,6 +65,6 @@ class MatriculadosController extends Controller
                 $value->alunos = [];
             }
         }
-        return response()->json($results);
+        return response()->json($results[0]);
     }
 }

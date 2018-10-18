@@ -28,19 +28,19 @@ class TurmasTableSeeder extends Seeder
             'diario_id' => 4,
         ]);
         DB::table('turmas')->insert([
-            'codigo' => '20182.3.15122.1E.',
+            'codigo' => '20182.3.15122.1E',
             'diario_id' => 5,
         ]);
         DB::table('turmas')->insert([
-            'codigo' => '20182.3.15122.1E.',
+            'codigo' => '20182.3.15122.1E',
             'diario_id' => 6,
         ]);
         DB::table('turmas')->insert([
-            'codigo' => '20182.3.15122.1E.',
+            'codigo' => '20182.3.15122.1E',
             'diario_id' => 7,
         ]);
         DB::table('turmas')->insert([
-            'codigo' => '20182.3.15122.1E.',
+            'codigo' => '20182.3.15122.1E',
             'diario_id' => 8,
         ]);
     }
