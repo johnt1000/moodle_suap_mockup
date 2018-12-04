@@ -1,7 +1,7 @@
 # Moodle/SUAP Mockup
 API para teste de sincronia do projeto de integração entre Moodle e SUAP do IFRN.
 
-# Projetos Relacionados
+## Projetos relacionados
 * [https://github.com/CoticEaDIFRN/moodle_suap_integrador_app](https://github.com/CoticEaDIFRN/moodle_suap_integrador_app)
 * [https://github.com/CoticEaDIFRN/moodle_suap_integrador_ms](https://github.com/CoticEaDIFRN/moodle_suap_integrador_ms)
 * [https://github.com/CoticEaDIFRN/moodle_docker_compose](https://github.com/CoticEaDIFRN/moodle_docker_compose)
