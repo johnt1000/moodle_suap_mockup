@@ -1,5 +1,10 @@
-# SUAP Mock
-API para teste de sincronia com SUAP IFRN.
+# Moodle/SUAP Mockup
+API para teste de sincronia do projeto de integração entre Moodle e SUAP do IFRN.
+
+## Projetos relacionados
+* [https://github.com/CoticEaDIFRN/moodle_suap_integrador_app](https://github.com/CoticEaDIFRN/moodle_suap_integrador_app)
+* [https://github.com/CoticEaDIFRN/moodle_suap_integrador_ms](https://github.com/CoticEaDIFRN/moodle_suap_integrador_ms)
+* [https://github.com/CoticEaDIFRN/moodle_docker_compose](https://github.com/CoticEaDIFRN/moodle_docker_compose)
 
 ## Requisitos
 * [Docker](https://docs.docker.com/install/)
@@ -9,14 +14,14 @@ API para teste de sincronia com SUAP IFRN.
 
 ## Clone o repositório
 ```shell
-git clone https://github.com/johnt1000/suap_mock.git
+git clone https://github.com/johnt1000/moodle_suap_mockup.git
 ```
 
 ## Uso
 Acesse a raiz do projeto:
 
 ```shell
-cd suap_mock
+cd moodle_suap_mockup
 ```
 
 Inicie o docker usando o comando:
